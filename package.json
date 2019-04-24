@@ -1,0 +1,12 @@
+{
+  "name": "koa2-ts-sequelize-bootstrap",
+  "version": "1.0.0",
+  "description": "An opinionated boilerplate for koa v2 with typescript",
+  "scripts": {
+    "test": "./node_modules/.bin/jest",
+    "test:coverage": "./node_modules/.bin/jest --colors --coverage",
+    "test:watch": "./node_modules/.bin/jest --colors --watch",
+  },
+  "author": "Raheel Jameel <raheel_jameel@yahoo.com>",
+  "license": "MIT"
+}
