@@ -1,0 +1,14 @@
+#Core
+NODE_ENV=development
+API_PORT=4000
+
+#Database
+#MYSQL_ROOT_PASSWORD=<development.secret>
+MYSQL_USER=koaapi
+MYSQL_PASSWORD=koaapi
+MYSQL_DATABASE=koaapi
+MYSQL_HOST=mysql
+MYSQL_PORT=3306
+MYSQL_DIALECT=mysql
+MYSQL_LOGGING=true
+MYSQL_TIMEZONE=+05:00

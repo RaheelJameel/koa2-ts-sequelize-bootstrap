@@ -42,8 +42,7 @@ build/Release
 src/conf/*.json
 
 # Env
-env
-.env
+*.secret
 *.secrets
 
 # apidoc
