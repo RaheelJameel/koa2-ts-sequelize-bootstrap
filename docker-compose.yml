@@ -14,16 +14,18 @@ services:
     depends_on:
       - mysql
     volumes:
-      - ".:/usr/app"
+      - "./src:/usr/app/src"
+      - "./logs:/usr/app/logs"
+      - "./database:/usr/app/database"
 
   mysql:
-    image: mysql:5.7
+    image: mysql:5.7.22
     container_name: koa-app-sql
     env_file:
       - src/env/development
       - src/env/development.secret
     ports:
-      - 3306:3306
+      - 3307:3306
     volumes:
       - mysql:/var/lib/mysql
 
