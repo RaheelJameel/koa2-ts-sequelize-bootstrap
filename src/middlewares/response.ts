@@ -11,6 +11,7 @@ const handler = async (ctx: Context, next: () => void) => {
     },
     data: ctx.state.data
   };
+  ctx.status = ctx.status;
   ctx.body = response;
 };
 

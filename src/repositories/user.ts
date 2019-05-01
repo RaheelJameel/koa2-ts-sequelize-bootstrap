@@ -4,7 +4,6 @@ import { User, BasicUser } from "../interfaces/user";
 const UserModel = Models.user;
 
 export const getAll = async (): Promise<User> => {
-  console.log('\n\n\n\nModels:\n', Models);
   return UserModel.findAll();
 };
 
