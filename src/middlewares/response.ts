@@ -4,14 +4,15 @@ import { Response } from '../interfaces/response';
 
 const handler = async (ctx: Context, next: () => void) => {
   await next();
+  const status = ctx.state.status || (ctx.state.data ? 200 : 404);
   const response: Response = {
     meta: {
-      status: ctx.status,
+      status,
       message: ctx.state.message || 'success'
     },
     data: ctx.state.data
   };
-  ctx.status = ctx.status;
+  ctx.status = status;
   ctx.body = response;
 };
 
