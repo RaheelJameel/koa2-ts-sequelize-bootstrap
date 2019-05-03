@@ -3,7 +3,7 @@ import { validate } from '../validations/index';
 import * as userSchema from '../validations/schemas/user';
 import { BasicUser, User } from '../interfaces/user';
 
-export const getAll = async (): Promise<User> => {
+export const getAll = async (): Promise<User[]> => {
   return userRepo.getAll();
 };
 

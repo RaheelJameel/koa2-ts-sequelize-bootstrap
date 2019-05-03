@@ -41,6 +41,7 @@
     "typescript": "^3.4.5"
   },
   "devDependencies": {
+    "@types/bluebird": "^3.5.26",
     "@types/boom": "^7.2.1",
     "@types/bunyan": "^1.8.6",
     "@types/continuation-local-storage": "^3.2.1",
@@ -53,6 +54,8 @@
     "@types/koa-router": "7.0.40",
     "@types/koa-static": "^4.0.1",
     "@types/koa-useragent": "^1.2.0",
+    "@types/node": "^11.13.9",
+    "@types/validator": "^10.11.0",
     "apidoc": "^0.17.7",
     "husky": "^2.1.0",
     "nodemon": "^1.19.0",

@@ -3,7 +3,7 @@ import { User, BasicUser } from "../interfaces/user";
 
 const UserModel = Models.user;
 
-export const getAll = async (): Promise<User> => {
+export const getAll = async (): Promise<User[]> => {
   return UserModel.findAll();
 };
 
