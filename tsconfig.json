@@ -14,17 +14,12 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "inlineSources": true,
-    "typeRoots": [
-      "node_modules/@types"
-    ],
     "outDir": "dist",
     "rootDirs": [
-      "src",
-      "lib"
+      "src"
     ]
   },
   "include": [
-    "src/**/*",
-    "lib/**/*"
+    "src/**/*"
   ]
 }
