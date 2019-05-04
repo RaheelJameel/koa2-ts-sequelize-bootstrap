@@ -14,4 +14,4 @@ RUN npm install \
 
 COPY . /usr/app
 EXPOSE 4000
-CMD ["./entrypoint.sh", "npm", "run", "watch"]
+CMD ["./entrypoint.sh", "node", "./bin/server"]
