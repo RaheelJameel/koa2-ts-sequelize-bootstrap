@@ -3,6 +3,7 @@ import { join } from 'path';
 import * as Logger from 'bunyan';
 import { Stream } from 'bunyan';
 
+// tslint:disable-next-line:no-var-requires
 const packageJson = require('../../package.json');
 const appName = (packageJson && packageJson.name) || 'App';
 

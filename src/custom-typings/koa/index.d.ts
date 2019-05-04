@@ -30,6 +30,6 @@ declare module 'koa' {
       status?: number;
 
       [index: string]: any
-    }
+    };
   }
 }

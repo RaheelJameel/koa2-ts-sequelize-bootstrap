@@ -1,4 +1,3 @@
-import { notFound } from 'boom';
 import * as Boom from 'boom';
 import { Context } from 'koa';
 import * as compose from 'koa-compose';
@@ -15,9 +14,6 @@ const isProduction = process.env.NODE_ENV === 'production';
 const handler = async (ctx: Context, next: () => void) => {
   try {
     await next();
-    // if (!ctx.state.data) {
-    //   throw notFound('Data not found ' + ctx.request.originalUrl);
-    // }
   } catch (err) {
     let metaData: MetaData;
     if (err.isJoi) {

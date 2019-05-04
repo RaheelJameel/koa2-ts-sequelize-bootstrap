@@ -1,11 +1,10 @@
-import { Sequelize, DataTypes } from "sequelize";
-import { UserModelStatic } from "../interfaces/models/user";
-import { ModelFactory } from "../interfaces/models/index";
+import { Sequelize, DataTypes } from 'sequelize';
+import { UserModelStatic } from '../interfaces/models/user';
 
 export default function (sequelize: Sequelize) {
   const UserModelDefine = sequelize.define('user', {
     id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER.UNSIGNED,
       primaryKey: true,
       allowNull: false,
       autoIncrement: true
@@ -18,10 +17,6 @@ export default function (sequelize: Sequelize) {
       type: DataTypes.STRING(100),
       allowNull: true
     }
-  }) as UserModelStatic;
-  UserModelDefine.associate = (models: ModelFactory) => {
-    models = models;
-    // UserModelDefine.hasMany(models.merchant, { foreignKey: 'gatewayId' });
-  };
+  }, { tableName: 'users' }) as UserModelStatic;
   return UserModelDefine;
 }

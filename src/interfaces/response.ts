@@ -1,4 +1,4 @@
-export interface Response {
+export interface AppResponse {
   meta: MetaData;
   data?: any;
 }

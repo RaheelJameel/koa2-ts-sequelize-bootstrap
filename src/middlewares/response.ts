@@ -1,11 +1,11 @@
 import { Context } from 'koa';
 import * as compose from 'koa-compose';
-import { Response } from '../interfaces/response';
+import { AppResponse } from '../interfaces/response';
 
 const handler = async (ctx: Context, next: () => void) => {
   await next();
   const status = ctx.state.status || (ctx.state.data ? 200 : 404);
-  const response: Response = {
+  const response: AppResponse = {
     meta: {
       status,
       message: ctx.state.message || 'success'

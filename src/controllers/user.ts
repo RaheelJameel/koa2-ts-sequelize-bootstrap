@@ -14,6 +14,6 @@ export const create = async (ctx: Context, next: () => void) => {
   const payload: BasicUser = {
     userId: ctx.request.body.userId,
     name: ctx.request.body.name,
-  }
+  };
   ctx.state.data = await userService.create(payload);
 };
