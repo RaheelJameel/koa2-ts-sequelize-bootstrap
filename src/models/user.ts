@@ -1,5 +1,6 @@
 import { Sequelize, DataTypes } from 'sequelize';
 import { UserModelStatic } from '../interfaces/models/user';
+import { ModelFactory } from '../interfaces/models/index';
 
 export default function (sequelize: Sequelize) {
   const UserModelDefine = sequelize.define('user', {
@@ -18,5 +19,12 @@ export default function (sequelize: Sequelize) {
       allowNull: true
     }
   }, { tableName: 'users' }) as UserModelStatic;
+  UserModelDefine.associate = (models: ModelFactory) => {
+    UserModelDefine.hasMany(models.project, {
+      sourceKey: 'id',
+      foreignKey: 'ownerId',
+      as: 'projects'
+    });
+  };
   return UserModelDefine;
 }

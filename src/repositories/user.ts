@@ -5,7 +5,13 @@ import { UserModel } from '../interfaces/models/user';
 const userModelStatic = Models.user;
 
 export const getAll = async (): Promise<UserModel[]> => {
-  return userModelStatic.findAll();
+  return userModelStatic.findAll({
+    include: [{
+      model: Models.project,
+      as: 'projects',
+      required: false
+    }]
+  });
 };
 
 export const create = async (payload: BasicUser): Promise<UserModel> => {

@@ -1,6 +1,7 @@
-import { Model } from 'sequelize';
+import { Model, BuildOptions } from 'sequelize';
+
 import { UserModelStatic } from './user';
-import { BuildOptions } from 'sequelize';
+import { ProjectModelStatic } from './project';
 
 export interface AssociatableModel {
   associate?(models: ModelFactory): void;
@@ -10,6 +11,7 @@ export type ModelStatic = typeof Model & AssociatableModel;
 
 export interface ModelFactory {
   user: UserModelStatic;
+  project: ProjectModelStatic;
   [index: string]: ModelStatic;
 }
 
