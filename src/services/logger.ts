@@ -31,10 +31,6 @@ export class AppLogger {
         level: 'error',
         type: 'rotating-file',
         period: '1d'
-      },
-      {
-        stream: process.stdout,
-        level: 'error'
       }
     ];
 
@@ -49,6 +45,11 @@ export class AppLogger {
         level: 'debug',
         type: 'rotating-file',
         period: '1d'
+      });
+    } else {
+      streams.push({
+        stream: process.stdout,
+        level: 'error'
       });
     }
 
