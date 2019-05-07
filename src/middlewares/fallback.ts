@@ -2,10 +2,10 @@ import { Context } from 'koa';
 import * as compose from 'koa-compose';
 import { notFound } from 'boom';
 
-const handler = async (ctx: Context, next: () => void) => {
-  // Todo remove these
-  ctx = ctx;
-  next = next;
+/**
+ * This middleware will only be called if no route is matched
+ */
+const handler = async (ctx: Context) => {
   throw notFound(`Route Not Found ${ctx.request.originalUrl}`);
 };
 

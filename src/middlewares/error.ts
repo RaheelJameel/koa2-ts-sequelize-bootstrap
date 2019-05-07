@@ -41,7 +41,6 @@ const handleBoomError = (err: Boom): MetaData => {
   return {
     status: +err.output.statusCode,
     message: err.message
-    // message: i18n.__(err.message)
   } as MetaData;
 };
 
@@ -49,15 +48,13 @@ const handleJoiError = (err: Joi.ValidationError): MetaData => {
   return {
     status: 400,
     message: err.details[0].message
-    // message: i18n.__(err.details[0].message)
   };
 };
 
 const handleDefaultError = (err: any): MetaData => {
   return {
     status: 500,
-    message: err.message || 'error.internal_server'
-    // message: i18n.__(err.message || 'error.internal_server')
+    message: err.message || 'internal_server_error'
   };
 };
 
