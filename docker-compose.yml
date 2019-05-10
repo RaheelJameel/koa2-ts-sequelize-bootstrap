@@ -12,7 +12,7 @@ services:
     ports:
       - 4000:4000
     depends_on:
-      - mysql
+      - mariadb
     volumes:
       - "./src:/usr/app/src"
       - "./logs:/usr/app/logs"
@@ -22,17 +22,17 @@ services:
       - ./node_modules/.bin/nodemon
       - ./bin/server
 
-  mysql:
-    image: mysql:5.7.22
-    container_name: koa-app-sql
+  mariadb:
+    image: mariadb/server:10.3.13
+    container_name: koa-app-mariadb
     env_file:
       - src/env/development
       - src/env/development.secret
     ports:
       - 3307:3306
     volumes:
-      - mysql:/var/lib/mysql
+      - mariadb:/var/lib/mysql
 
 volumes:
-  mysql:
+  mariadb:
 
