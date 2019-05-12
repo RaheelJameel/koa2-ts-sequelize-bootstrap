@@ -4,6 +4,7 @@ import { Sequelize, Dialect } from 'sequelize';
 const basename = path.basename(__filename);
 import * as cls from 'continuation-local-storage';
 import { ModelFactory, AssociatableModel } from '../interfaces/models/index';
+import { logger } from '../services/logger';
 
 Sequelize.useCLS(cls.createNamespace('transactions-cls'));
 
@@ -18,7 +19,9 @@ const sequelize: Sequelize = new Sequelize(
     dialectOptions: {
       timezone: process.env.MYSQL_TIMEZONE
     },
-    logging: process.env.NODE_ENV !== 'production'
+    logging(sql: string, data: any) {
+      logger.debug({ sequelize: data }, sql.replace(/\r?\n|\r/g, '').replace(/\s{2,}/g, ' '));
+    }
   }
 );
 
