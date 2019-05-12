@@ -17,7 +17,8 @@ const sequelize: Sequelize = new Sequelize(
     dialect: (process.env.MYSQL_DIALECT || '') as Dialect,
     dialectOptions: {
       timezone: process.env.MYSQL_TIMEZONE
-    }
+    },
+    logging: process.env.NODE_ENV !== 'production'
   }
 );
 
