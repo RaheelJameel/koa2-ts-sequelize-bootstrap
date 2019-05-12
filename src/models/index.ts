@@ -15,7 +15,8 @@ const sequelize: Sequelize = new Sequelize(
     host: process.env.MYSQL_HOST || '',
     port: Number(process.env.MYSQL_PORT) || 0,
     timezone: process.env.MYSQL_TIMEZONE || '',
-    dialect: (process.env.MYSQL_DIALECT || '') as Dialect
+    dialect: (process.env.MYSQL_DIALECT || '') as Dialect,
+    logging: process.env.NODE_ENV !== 'production'
   }
 );
 
