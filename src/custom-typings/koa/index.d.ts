@@ -1,4 +1,5 @@
 import { Context } from 'koa';
+import { PaginationState } from '../../interfaces/pagination';
 
 declare module 'koa' {
   interface Context {
@@ -28,6 +29,13 @@ declare module 'koa' {
        * @type {number}
        */
       status?: number;
+
+      /**
+       * PaginationState for GET requests
+       *
+       * @type {PaginationState}
+       */
+      pagination?: PaginationState;
 
       [index: string]: any
     };

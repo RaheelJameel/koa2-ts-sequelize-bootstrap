@@ -13,6 +13,7 @@ import responseMiddleware from './middlewares/response';
 import logMiddleware from './middlewares/log';
 import routeMiddleware from './routes/index';
 import fallbackMiddleware from './middlewares/fallback';
+import panignationMiddleware from './middlewares/panignation';
 
 bootstrap()
   .then(() => {
@@ -27,6 +28,7 @@ bootstrap()
     app.use(logMiddleware(logger));
     app.use(errorMiddleware());
     app.use(jsonMiddleware());
+    app.use(panignationMiddleware());
     app.use(responseMiddleware());
     app.use(routeMiddleware());
     app.use(fallbackMiddleware());

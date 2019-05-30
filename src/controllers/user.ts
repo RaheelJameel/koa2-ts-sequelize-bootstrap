@@ -3,7 +3,7 @@ import * as userService from '../services/user';
 import { BasicUser } from '../interfaces/user';
 
 export const getAll = async (ctx: Context) => {
-  ctx.state.data = await userService.getAll();
+  ctx.state.data = await userService.getAll(ctx.state.pagination);
 };
 
 export const create = async (ctx: Context) => {
