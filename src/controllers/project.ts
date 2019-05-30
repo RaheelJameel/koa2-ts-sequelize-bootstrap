@@ -3,7 +3,7 @@ import * as projectService from '../services/project';
 import { BasicProject } from '../interfaces/project';
 
 export const getAll = async (ctx: Context) => {
-  ctx.state.data = await projectService.getAll();
+  ctx.state.data = await projectService.getAll(ctx.state.pagination);
 };
 
 export const create = async (ctx: Context) => {

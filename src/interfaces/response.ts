@@ -6,5 +6,8 @@ export interface AppResponse {
 export interface MetaData {
   status: number;
   message: string;
+  limit?: number;
+  offset?: number;
+  totalCount?: number;
   stack?: string;
 }
