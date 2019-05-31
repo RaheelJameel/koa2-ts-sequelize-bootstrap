@@ -1,6 +1,13 @@
 import { Order } from 'sequelize/types';
 import { SortOrder } from '../constants/pagination';
 
+export interface PaginationInput {
+  limit?: number;
+  offset?: number;
+  sortBy?: string;
+  sortOrder?: SortOrder;
+}
+
 export interface PaginationState {
   limit: number;
   offset: number;
