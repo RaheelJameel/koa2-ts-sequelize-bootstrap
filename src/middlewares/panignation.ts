@@ -10,7 +10,7 @@ const handler = async (ctx: Context, next: () => void) => {
     const pagination: PaginationState = {
       limit: parseInt(ctx.query.limit, 10) || limit,
       offset: parseInt(ctx.query.offset, 10) || offset,
-      sortBy: ctx.query.offset || sortBy,
+      sortBy: ctx.query.sortBy || sortBy,
       sortOrder: ctx.query.sortOrder || SortOrder.asc
     };
     validate(pagination, paginationSchema.pagination);
